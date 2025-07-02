@@ -11,9 +11,9 @@ Mettre une annonce (pas forcément avec ping) pour prévenir que tant de jeux do
 Se serait dommage de laisser passer cette occasion sachant que nombreux ne suive pas les soldes steam
 
 # TODO
-- Trouver un moyen de récupérer le prix actuel
-- Trouver un moyen de récupérer la valeur de la réduction (si il y a)
-- Trouver un moyen de montrer ca sur discord
+- [x] Trouver un moyen de récupérer le prix actuel
+- [x] Trouver un moyen de récupérer la valeur de la réduction (si il y a)
+- [ ] Trouver un moyen de montrer ca sur discord
     - Embed ?
     - Comment update ? Stocker l'id du message quelque part ?
     - Update toutes les heures ?
