@@ -1,11 +1,3 @@
-# Jeux a surveiller
-- Outer Wilds
-- Outer Wilds DLC
-- Detroit Become Human
-- Tunic
-- Stanley Parable
-- Hollow Knight
-
 # Instructions
 Mettre une annonce (pas forcément avec ping) pour prévenir que tant de jeux dont Augustin parle sont en solde:
 Se serait dommage de laisser passer cette occasion sachant que nombreux ne suive pas les soldes steam
