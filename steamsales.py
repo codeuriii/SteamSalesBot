@@ -1,14 +1,5 @@
 import requests
 
-class SteamGamesIDs:
-    outer_wilds = "753640"
-    outer_Wilds_dlc = "1622100"
-    detroit_become_human = "1222140"
-    tunic = "553420"
-    stanley_parable = "221910"
-    stanley_parable_dlc = "1703340"
-    hollow_knight = "367520"
-
 class Price:
     def __init__(self, is_reduction, current_price, original_price=None, reduction_percentage=None):
         self.is_reduction = is_reduction
