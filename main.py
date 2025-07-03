@@ -78,20 +78,21 @@ async def update_discord_messages():
 @bot.event
 async def on_ready():
     await bot.tree.sync()
-    update_desc()
+    update_discord_messages()
     bot.loop.create_task(hourly_update_desc())
     print(f"Logged in as {bot.user.name} - {bot.user.id}")
 
 @bot.event
 async def on_message_delete(message: ds.Message):
-    if message.id in messages:
-        remove_message_id(message.channel.id, message.id)
+    if message.channel.id in messages:
+        remove_message_id(message.channel.id)
         print(f"Message supprimé retiré de la liste : {message.id}")
 
 @bot.tree.command(name="send_here", description="Envoyer les prix ici")
 @check_admin
 async def send_here(interaction: ds.Interaction):
-    msg = await interaction.response.send_message(desc)
+    await interaction.response.send_message(desc)
+    msg = await interaction.original_response()
     add_message_id(interaction.channel.id, msg.id)
 
 
@@ -101,7 +102,7 @@ async def hourly_update_desc():
         next_hour = (now.replace(minute=0, second=0, microsecond=0) + timedelta(hours=1))
         wait_seconds = (next_hour - now).total_seconds()
         await asyncio.sleep(wait_seconds)
-        update_discord_messages()
+        await update_discord_messages()
         print(f"Description mise à jour à {datetime.now().strftime('%H:%M')}")
 
 
