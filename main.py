@@ -91,8 +91,8 @@ async def on_message_delete(message: ds.Message):
 @bot.tree.command(name="send_here", description="Envoyer les prix ici")
 @check_admin
 async def send_here(interaction: ds.Interaction):
-    
-    await interaction.followup.send(desc)
+    msg = await interaction.response.send_message(desc)
+    add_message_id(interaction.channel.id, msg.id)
 
 
 async def hourly_update_desc():
