@@ -14,6 +14,23 @@ class Price:
             f"original_price='{self.original_price}', "
             f"reduction_percentage='{self.reduction_percentage}')"
         )
+    
+    def to_dict(self):
+        return {
+            "is_reduction": self.is_reduction,
+            "current_price": self.current_price,
+            "original_price": self.original_price,
+            "reduction_percentage": self.reduction_percentage
+        }
+
+    @classmethod
+    def from_dict(cls, data):
+        return cls(
+            is_reduction=data.get("is_reduction"),
+            current_price=data.get("current_price"),
+            original_price=data.get("original_price"),
+            reduction_percentage=data.get("reduction_percentage")
+        )
 
 class SteamSales:
     def search(self, appid: str) -> Price:

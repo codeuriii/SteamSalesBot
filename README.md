@@ -5,7 +5,7 @@ Se serait dommage de laisser passer cette occasion sachant que nombreux ne suive
 # TODO
 - [x] Trouver un moyen de récupérer le prix actuel
 - [x] Trouver un moyen de récupérer la valeur de la réduction (si il y a)
-- [ ] Trouver un moyen de montrer ca sur discord
+- [x] Trouver un moyen de montrer ca sur discord
     - Embed ?
-    - Comment update ? Stocker l'id du message quelque part ?
-    - Update toutes les heures ?
+- [ ] Comment update ? Stocker l'id du message quelque part ?
+- [ ] Update toutes les heures ?
