@@ -16,10 +16,12 @@ class Price:
         )
 
 class SteamSales:
-    def search(self, appid: str):
+    def search(self, appid: str) -> Price:
         url = f"https://store.steampowered.com/api/appdetails?appids={appid}&cc=fr&l=french"
         response = requests.get(url)
         if response.status_code != 200:
+            print(response.status_code)
+            print(response.text)
             raise Exception("Erreur lors de la requête")
 
         data = response.json()
