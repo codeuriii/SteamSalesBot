@@ -57,7 +57,7 @@ def get_games():
     return result
 
 def get_desc(result: dict[str, dict[str, str | float]]):
-    desc = f"```\n{"Jeu".ljust(34)} | {"Prix".ljust(5)} | Reduc | %\n"
+    desc = f"```\n{'Jeu'.ljust(34)} | {'Prix'.ljust(5)} | Reduc | %\n"
     for name, price_dict in result.items():
         price = Price.from_dict(price_dict)
         desc += f"{name.ljust(34)} | {str(price.current_price).ljust(5)} | {str(price.original_price).ljust(5) if price.is_reduction else "/".ljust(5)} | {str(price.reduction_percentage) if price.is_reduction else "/"}\n"
