@@ -78,7 +78,7 @@ async def update_discord_messages():
 @bot.event
 async def on_ready():
     await bot.tree.sync()
-    update_discord_messages()
+    await update_discord_messages()
     bot.loop.create_task(hourly_update_desc())
     print(f"Logged in as {bot.user.name} - {bot.user.id}")
 
