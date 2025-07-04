@@ -72,8 +72,10 @@ async def update_discord_messages():
     update_desc()
     for channel_id, message_id in messages.items():
         channel = await bot.fetch_channel(channel_id)
-        message = await channel.fetch_message(message_id)
-        await message.edit(content=desc)
+        try:
+            message = await channel.fetch_message(message_id)
+            await message.edit(content=desc)
+        except: pass
 
 @bot.event
 async def on_ready():
