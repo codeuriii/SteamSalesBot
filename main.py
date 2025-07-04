@@ -39,8 +39,14 @@ def remove_message_id(channel_id: str):
         update_messages()
 
 def check_admin_func(interaction: ds.Interaction):
-                                   # CodeurIII ID      # Synedh ID
-    return interaction.user.id in [839429032343765002, 114880864772423682]
+    # Si je suis sur mon serveur de tests                                     # N'autoriser que moi
+    if interaction.guild.id == 1056585483028799528 and interaction.user.id == 839429032343765002:
+        return True
+    # Si on est sur TheGreatDiscord
+    elif interaction.guild.id == 621302461600235531:
+        return interaction.user.guild_permissions.administrator
+        
+    return False
 
 def get_datetime():
     return datetime.now().strftime("Mis a jour le %d/%m/%Y à %H:%M")
