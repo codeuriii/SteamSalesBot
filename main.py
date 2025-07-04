@@ -21,11 +21,11 @@ def check_admin(func):
 bot = commands.Bot(command_prefix="!", intents=ds.Intents.all())
 steamapi = SteamSales()
 desc = None
-with open("./messages.json", "r") as f:
+with open("/home/codeuriii/vsocde/SteamSalesBot/messages.json", "r") as f:
     messages: dict[str, str] = json.load(f)
 
 def update_messages():
-    with open("./messages.json", "w") as f:
+    with open("/home/codeuriii/vsocde/SteamSalesBot/messages.json", "w") as f:
         json.dump(messages, f, indent=4)
 
 def add_message_id(channel_id: str, message_id: str):
